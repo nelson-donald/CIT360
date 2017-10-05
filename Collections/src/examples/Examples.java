@@ -5,6 +5,9 @@
  */
 package examples;
 
+import examples.Controller.StudentController;
+import examples.Model.Student;
+import examples.View.StudentView;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.LinkedList;
@@ -21,19 +24,55 @@ public class Examples {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        DoLinkedList();
-        DoArrayList();
-        DoHashTable();
-        DoList();
+        //======================================================================
+        //Collections Examples
+        //======================================================================
+        //doLinkedList();
+        //doArrayList();
+        //doHashTable();
+        //doList();
         
-        //Perform some threads
-        Thread_Example t_e=  new Thread_Example();
-        t_e.CountToTen();
-                
+        //======================================================================
+        //Thread Example
+        //======================================================================
+        //Thread_Example t_e=  new Thread_Example();
+        //t_e.letsDoThis();
+        
+        //======================================================================
+        //MVC Demo
+        //======================================================================
+        doMVCDemo();
+        
     }
+    public static void doMVCDemo()
+    {
+      //fetch student record based on his roll no from the database
+      Student model  = retrieveStudentFromDatabase();
+
+      //Create a view : to write student details on console
+      StudentView view = new StudentView();
+
+      //Instantiate the controller and give it the Model and the View we just created
+      StudentController controller = new StudentController(model, view);
+
+      //Update the view
+      controller.updateView();
+
+      //update model data
+      controller.setStudentName("John");
+
+      //Update the view again
+      controller.updateView();
+   }
+
+   private static Student retrieveStudentFromDatabase(){
+      Student student = new Student();
+      student.setName("Robert");
+      student.setRollNo("10");
+      return student;
+   }
     
-    private static void DoList()
+    private static void doList()
     {
          //Instantiate a new ArrayList of type String
         List<String> list = new ArrayList<String>();
@@ -59,7 +98,7 @@ public class Examples {
         
     }
     
-    private static void DoHashTable()
+    private static void doHashTable()
     {
          //Instantiate a new ArrayList of type String
         Hashtable<Integer,String> hashTable = new Hashtable<Integer,String>();
@@ -93,7 +132,7 @@ public class Examples {
         System.out.println("Size: "+hashTable.size());
     }
     
-    private static void DoArrayList()
+    private static void doArrayList()
     {
         //Instantiate a new ArrayList of type String
         ArrayList<String> arrayList = new ArrayList<String>();
@@ -129,7 +168,7 @@ public class Examples {
         
     }
     
-    private static void DoLinkedList()
+    private static void doLinkedList()
     {
         LinkedList<String> linkedList = new LinkedList<String>();
 

@@ -11,9 +11,13 @@ package examples;
  */
 public class Thread_Example {
     
-    public void CountToTen()
+    public void letsDoThis()
     {
         Runnable task = () -> {
+            
+        System.out.println("================================================================================");
+        System.out.println("Thread");
+        System.out.println("================================================================================");
             String threadName = Thread.currentThread().getName();
             System.out.println("Good day " + threadName);
         };

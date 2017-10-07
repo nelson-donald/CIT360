@@ -5,7 +5,7 @@
  */
 package examples;
 
-import example.Threads.Thread_Example;
+import examples.Threads.Thread_Example;
 import Examples.Collections.MyCollections;
 import examples.Controller.StudentController;
 import examples.Model.Student;

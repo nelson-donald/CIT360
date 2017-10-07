@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package examples;
+package example.Threads;
 
 /**
  *
@@ -11,7 +11,7 @@ package examples;
  */
 public class Thread_Example {
     
-    public void letsDoThis()
+    public void start()
     {
         Runnable task = () -> {
             
@@ -22,11 +22,16 @@ public class Thread_Example {
             System.out.println("Good day " + threadName);
         };
         
+        //Run the task on the main thread
         task.run();
         
+        //Create a new thread and tell it to process the Task we created
         Thread thread = new Thread(task);
+        
+        //Start the new thread
         thread.start();
         
+        //show that we finished the main thread
         System.out.println("Done!");
     }
 }

@@ -27,16 +27,16 @@ public class Examples {
         //======================================================================
         //Collections Examples
         //======================================================================
-        //doLinkedList();
-        //doArrayList();
-        //doHashTable();
-        //doList();
+        doLinkedList();
+        doArrayList();
+        doHashTable();
+        doList();
         
         //======================================================================
         //Thread Example
         //======================================================================
-        //Thread_Example t_e=  new Thread_Example();
-        //t_e.letsDoThis();
+        Thread_Example t_e=  new Thread_Example();
+        t_e.letsDoThis();
         
         //======================================================================
         //MVC Demo
@@ -44,6 +44,7 @@ public class Examples {
         doMVCDemo();
         
     }
+    
     public static void doMVCDemo()
     {
       //fetch student record based on his roll no from the database

@@ -5,6 +5,8 @@
  */
 package examples.Threads;
 
+import examples.Logging.Logit;
+
 /**
  *
  * @author neldo
@@ -15,11 +17,11 @@ public class Thread_Example {
     {
         Runnable task = () -> {
             
-        System.out.println("================================================================================");
-        System.out.println("Thread");
-        System.out.println("================================================================================");
+        Logit.verbose("================================================================================");
+        Logit.verbose("Thread");
+        Logit.verbose("================================================================================");
             String threadName = Thread.currentThread().getName();
-            System.out.println("Good day " + threadName);
+            Logit.verbose("Good day " + threadName);
         };
         
         //Run the task on the main thread
@@ -32,6 +34,6 @@ public class Thread_Example {
         thread.start();
         
         //show that we finished the main thread
-        System.out.println("Done!");
+        Logit.verbose("Done!");
     }
 }

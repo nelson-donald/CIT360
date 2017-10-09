@@ -8,6 +8,7 @@ package examples;
 import examples.Threads.Thread_Example;
 import Examples.Collections.MyCollections;
 import examples.Controller.StudentController;
+import examples.Logging.Logit;
 import examples.Model.Student;
 import examples.View.StudentView;
 import java.util.ArrayList;
@@ -26,6 +27,9 @@ public class Examples {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        Logit.error("Not a real Error. Just an example.");
+        
         //======================================================================
         //Collections Examples
         //======================================================================
@@ -59,6 +63,7 @@ public class Examples {
         //MVC Demo
         //======================================================================
         doMVCDemo();
+        
         
     }
     

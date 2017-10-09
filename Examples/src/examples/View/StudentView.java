@@ -5,6 +5,8 @@
  */
 package examples.View;
 
+import examples.Logging.Logit;
+
 /**
  *
  * @author neldo
@@ -12,12 +14,12 @@ package examples.View;
 public class StudentView {
    public void printStudentDetails(String studentName, String studentRollNo){
        
-        System.out.println("================================================================================");
-        System.out.println("MVC demo");
-        System.out.println("================================================================================");
-      System.out.println("Student: ");
-      System.out.println("Name: " + studentName);
-      System.out.println("Roll No: " + studentRollNo);
+        Logit.verbose("================================================================================");
+        Logit.verbose("MVC demo");
+        Logit.verbose("================================================================================");
+        Logit.verbose("Student: ");
+        Logit.verbose("Name: " + studentName);
+        Logit.verbose("Roll No: " + studentRollNo);
    }
 }
 

@@ -80,6 +80,11 @@ public class Logit {
         }
     }
     
+    
+//================================================================================
+//Public static methods
+//================================================================================
+    
     //The static method for logging verbose messages
     public static void verbose(String s){
         
@@ -104,6 +109,12 @@ public class Logit {
         _Logit.write(_Logit.format(s,"red"));
     }
     
+    
+    
+//================================================================================
+//Private static methods
+//================================================================================
+    
     //Make this call to instantiate the Java Class with a new isntance of itself
     private static void startup()
     {
@@ -114,6 +125,11 @@ public class Logit {
         }
         
     }
+    
+    
+//================================================================================
+//Private methods
+//================================================================================
     
     //Converts the line of log file into an HTML format
     private String format(String s, String c){
@@ -134,13 +150,13 @@ public class Logit {
     }
     
     //takes the string and forwards to the format class that does all the work
-    public String format(String s){
+    private String format(String s){
         
         return format(s,"");
     }
     
     //Writes the log to the file
-    public synchronized void write(String s){
+    private synchronized void write(String s){
         
         //Remove the last line of the file
         try{

@@ -7,11 +7,15 @@ package examples.JSON;
 
 import examples.Logging.Logit;
 import java.awt.Event;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 
 import org.quickconnectfamily.json.JSONException;
@@ -94,16 +98,44 @@ public class JSON_Example {
             
             //Write to a file
             try(FileWriter _fileWriter = new FileWriter(_fileName, true)){
-            BufferedWriter _out = new BufferedWriter(_fileWriter);
+                BufferedWriter _out = new BufferedWriter(_fileWriter);
                         
-            //Write to the log file
-            _out.write(textJSON);
+            //Write to the file
+                _out.write(textJSON);
             _out.close();
-        
-        }catch(Exception ex)
-        {
-            System.out.println(ex.getMessage());
-        }
+            
+            }catch(Exception ex)
+            {
+                System.out.println(ex.getMessage());
+            }
+            
+            
+//================================================================================
+//Step 3, read the JSON from a text file and convert back to an object using parse
+//================================================================================
+
+            //read from a file
+            String _content = "";
+            
+            try{
+                //Read the entire contents of the file
+                _content = new String(Files.readAllBytes(Paths.get(_fileName)));
+                
+                //Call the Parse methos. This method returns a HashMap or Array.
+                //I converted to HashMap and passed into my Error class
+                error _newError = new error((HashMap)JSONUtilities.parse(_content));
+                                
+                //Log the New JSON object
+                Logit.verbose("---------- The New JSON Object ----------");
+                Logit.verbose("Error : " + _newError.getError());
+                Logit.verbose("Error_Info : " + _newError.getError_Info());
+                Logit.verbose("Validate: " + _newError.getValidate());
+                Logit.verbose("Object_or_Array: " + _newError.getObject_Or_Array());
+            
+            }catch(Exception ex)
+            {
+                System.out.println(ex.getMessage());
+            }
             
             
         }

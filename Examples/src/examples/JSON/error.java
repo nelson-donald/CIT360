@@ -5,6 +5,7 @@
  */
 package examples.JSON;
 
+import examples.Logging.Logit;
 import java.io.Serializable;
 import java.util.HashMap;
 
@@ -20,13 +21,13 @@ public class error implements Serializable {
 //Private variables
 //================================================================================
     
-    private String _Error;
+    private String error;
     
-    private String _Object_or_array;
+    private String object_or_array;
     
-    private String _Error_info;
+    private String error_info;
     
-    private Boolean _Validate;
+    private Boolean validate;
     
     
 //================================================================================
@@ -34,16 +35,16 @@ public class error implements Serializable {
 //================================================================================
     
     public String getError_Info(){
-        return this._Error_info;
+        return this.error_info;
     }
     public Boolean getValidate(){
-        return this._Validate;
+        return this.validate;
     }
     public String getError(){
-        return this._Error;
+        return this.error;
     }
     public String getObject_Or_Array(){
-        return this._Object_or_array;
+        return this.object_or_array;
     }
     
     
@@ -52,17 +53,18 @@ public class error implements Serializable {
 //================================================================================
     
     public error(String message, String object_or_array, String error_info, Boolean validate) {
-	_Error=message;
-        _Object_or_array=object_or_array;
-        _Error_info=error_info;
-        _Validate=validate;
+	this.error=message;
+        this.object_or_array=object_or_array;
+        this.error_info=error_info;
+        this.validate=validate;
     }
 	
     public error(HashMap aMapRepresentation){
-	this._Error = (String)aMapRepresentation.get("error");
-        this._Object_or_array = (String)aMapRepresentation.get("object_or_array");
-        this._Error_info = (String)aMapRepresentation.get("error_info");
-        this._Validate = (Boolean)aMapRepresentation.get("validate");
+	this.error = (String)aMapRepresentation.get("error");
+        Logit.verbose((String)aMapRepresentation.get("error"));
+        this.object_or_array = (String)aMapRepresentation.get("object_or_array");
+        this.error_info = (String)aMapRepresentation.get("error_info");
+        this.validate = (Boolean)aMapRepresentation.get("validate");
 		
     }
 }

@@ -61,6 +61,15 @@ public class Examples {
         //start the example
         thread_Example.start();
         
+        try{
+            //I'm forcing a sleep so that my log file looks clean after the last Thread exaple
+            Thread.sleep(1000);
+        }
+        catch(Exception ex)
+        {
+            Logit.error(ex.getMessage());
+        }
+        
         //Executor Example
         Executor_Example executor_Example = new Executor_Example();
         executor_Example.Begin();

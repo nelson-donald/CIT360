@@ -41,7 +41,7 @@ public class Logit {
         //If the filename has not been determined
         if(_FileName == null){
             Date _d = new Date();
-            _FileName = "C:\\Logs\\";
+            _FileName = "C:\\Logs\\Donald.Nelson.";
             DateFormat _dateFormat = new SimpleDateFormat("yyyy");
             _FileName += _dateFormat.format(_d);
             _dateFormat = new SimpleDateFormat("MM");
@@ -133,14 +133,19 @@ public class Logit {
     
     //Converts the line of log file into an HTML format
     private String format(String s, String c){
-        String _result = "<div class=\"" + c + "\">";
+        String _result = "";
         try
         {
             DateFormat _dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Date _d = new Date();
             _result += "[ " + _dateFormat.format(_d) + " ]";
             _result += " - ";
-            _result += s + "</div>";
+            _result += s;
+            
+            //Write to the console
+            System.out.println(_result);
+            
+            _result ="<div class=\"" + c + "\">" + _result + "</div>";
         }catch(Exception ex)
         {
             
@@ -172,10 +177,7 @@ public class Logit {
         //This try block is the equivelent of a C# using statment
         try(FileWriter _fileWriter = new FileWriter(_FileName, true)){
             BufferedWriter _out = new BufferedWriter(_fileWriter);
-            
-            //Write to the console
-            System.out.println(s);
-            
+                        
             //Write to the log file
             _out.write(s + "\r\n");
             

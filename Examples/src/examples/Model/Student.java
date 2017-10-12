@@ -10,6 +10,11 @@ package examples.Model;
  * @author neldo
  */
 public class Student {
+    
+    
+//================================================================================
+//Private variables
+//================================================================================
    private String rollNo;
    private String name;
    

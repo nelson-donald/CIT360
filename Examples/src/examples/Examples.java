@@ -8,8 +8,10 @@ package examples;
 import examples.Threads.Thread_Example;
 import Examples.Collections.MyCollections;
 import examples.Controller.StudentController;
+import examples.JSON.JSON_Example;
 import examples.Logging.Logit;
 import examples.Model.Student;
+import examples.Threads.Executor_Example;
 import examples.View.StudentView;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -59,11 +61,17 @@ public class Examples {
         //start the example
         thread_Example.start();
         
+        //Executor Example
+        Executor_Example executor_Example = new Executor_Example();
+        executor_Example.Begin();
+        
         //======================================================================
         //MVC Demo
         //======================================================================
         doMVCDemo();
         
+        //JSON Example
+        JSON_Example jse = new JSON_Example();
         
     }
     

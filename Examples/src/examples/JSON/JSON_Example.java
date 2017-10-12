@@ -80,6 +80,7 @@ public class JSON_Example {
             String textJSON = JSONUtilities.stringify(readObject);
             
             //Log it just to prove it looks like JSON text
+            Logit.verbose("---------- The JSON text from the Object using stringify ----------");
             Logit.verbose(textJSON);
             
             String _fileName = "C:\\Logs\\JSON.txt";
@@ -126,7 +127,7 @@ public class JSON_Example {
                 error _newError = new error((HashMap)JSONUtilities.parse(_content));
                                 
                 //Log the New JSON object
-                Logit.verbose("---------- The New JSON Object ----------");
+                Logit.verbose("---------- The New JSON Object from File using parse to convert back to Object ----------");
                 Logit.verbose("Error : " + _newError.getError());
                 Logit.verbose("Error_Info : " + _newError.getError_Info());
                 Logit.verbose("Validate: " + _newError.getValidate());

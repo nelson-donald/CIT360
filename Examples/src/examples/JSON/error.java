@@ -61,7 +61,6 @@ public class error implements Serializable {
 	
     public error(HashMap aMapRepresentation){
 	this.error = (String)aMapRepresentation.get("error");
-        Logit.verbose((String)aMapRepresentation.get("error"));
         this.object_or_array = (String)aMapRepresentation.get("object_or_array");
         this.error_info = (String)aMapRepresentation.get("error_info");
         this.validate = (Boolean)aMapRepresentation.get("validate");

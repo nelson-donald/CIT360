@@ -13,6 +13,8 @@ import examples.Logging.Logit;
 import examples.Model.Student;
 import examples.Threads.Executor_Example;
 import examples.View.StudentView;
+import examples.hibernate.Artist;
+import examples.hibernate.HibernateExample;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.LinkedList;
@@ -79,8 +81,58 @@ public class Examples {
         //======================================================================
         doMVCDemo();
         
+        //======================================================================
         //JSON Example
+        //======================================================================
         JSON_Example jse = new JSON_Example();
+        
+        
+        //======================================================================
+        //Hibernate Demo
+        //======================================================================
+        HibernateExample hc = new HibernateExample();
+        
+        Logit.verbose("================================================================================");
+        Logit.verbose("Current Database table");
+        Logit.verbose("================================================================================");
+        //Show all rows in the database
+        hc.readArtists( );
+        
+        
+        Logit.verbose("================================================================================");
+        Logit.verbose("New Entry in Database table");
+        Logit.verbose("================================================================================");
+        //Add to the database
+        Artist a = hc.createArtist();        
+        //Show all rows in the database
+        hc.readArtists( );
+        
+        
+        Logit.verbose("================================================================================");
+        Logit.verbose("Update single row in Database table");
+        Logit.verbose("================================================================================");
+        a.setFirst_name("Amanda");
+        hc.updateArtist(a);
+        //Show all rows in the database
+        hc.readArtists( );
+        
+        
+        Logit.verbose("================================================================================");
+        Logit.verbose("Delete single row in Database table");
+        Logit.verbose("================================================================================");      
+        a.setId(a.getId()-1);
+        //Remove from the database
+        hc.deleteArtist(a);        
+        //Show all rows in the database
+        hc.readArtists( );
+        
+        
+        Logit.verbose("================================================================================");
+        Logit.verbose("Current Database table");
+        Logit.verbose("================================================================================");   
+        //Show all rows in the database
+        hc.readArtists( );
+        
         
     }
     

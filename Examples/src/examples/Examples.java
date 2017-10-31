@@ -8,6 +8,7 @@ package examples;
 import examples.Threads.Thread_Example;
 import Examples.Collections.MyCollections;
 import examples.Controller.StudentController;
+import examples.HTTPUrlConnection.HttpConnectionTest;
 import examples.JSON.JSON_Example;
 import examples.Logging.Logit;
 import examples.Model.Student;
@@ -133,6 +134,12 @@ public class Examples {
         //Show all rows in the database
         hc.readArtists( );
         
+        //======================================================================
+        //HttpUrlConnection
+        //======================================================================
+        
+        HttpConnectionTest hct = new HttpConnectionTest();
+        Logit.verbose(hct.getContent());
         
     }
     

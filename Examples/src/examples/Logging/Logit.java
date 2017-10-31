@@ -106,7 +106,7 @@ public class Logit {
         
         //call the singleton object's write method which will write the
         //logged message to the file
-        _Logit.write(_Logit.format(s,"red"));
+        _Logit.write(_Logit.format("-= ERROR =- " + s,"red"));
     }
     
     

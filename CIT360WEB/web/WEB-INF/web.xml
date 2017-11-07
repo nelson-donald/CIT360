@@ -11,7 +11,7 @@
     </servlet>
     <servlet>
         <servlet-name>HelloWorldServlet</servlet-name>
-        <servlet-class>helloworld.HelloWorldServlet</servlet-class>
+        <servlet-class>cortana.HelloWorldServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
@@ -19,7 +19,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>HelloWorldServlet</servlet-name>
-        <url-pattern>/HelloWorldServlet</url-pattern>
+        <url-pattern>/cortana</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -27,6 +27,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/index.xhtml</welcome-file>
+        <welcome-file>faces/index.html</welcome-file>
     </welcome-file-list>
 </web-app>

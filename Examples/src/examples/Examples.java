@@ -7,6 +7,7 @@ package examples;
 
 import examples.Threads.Thread_Example;
 import Examples.Collections.MyCollections;
+import examples.ApplicationControllerPattern.ATM;
 import examples.Controller.StudentController;
 import examples.HTTPUrlConnection.HttpConnectionTest;
 import examples.JSON.JSON_Example;
@@ -141,6 +142,11 @@ public class Examples {
         HttpConnectionTest hct = new HttpConnectionTest();
         Logit.verbose(hct.getContent());
         
+        
+      ATM atm = new ATM();
+      atm.init();
+      atm.start();
+        
     }
     
     public static void doMVCDemo()
@@ -162,6 +168,7 @@ public class Examples {
 
       //Update the view again
       controller.updateView();
+      
    }
 
     //Pretends to get data from the database and return the Model object with the data

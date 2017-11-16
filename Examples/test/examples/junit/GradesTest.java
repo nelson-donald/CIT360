@@ -26,6 +26,7 @@ public class GradesTest {
         
         Grades instance = new Grades(50);
         
+        //assertEquals
         String expResult = "F";
         String result = instance.print();
         assertEquals(expResult, result);
@@ -49,6 +50,22 @@ public class GradesTest {
         instance.setGrade(90);
         result = instance.print();
         assertEquals(expResult, result);
+        
+        //assertNotEquals
+        String unexpResult = "A";
+        instance.setGrade(80);
+        result = instance.print();
+        assertNotEquals(unexpResult, result);
+        
+        //assertNull
+        String testString = null;
+        assertNull(testString);
+        
+        //assertTrue
+        Boolean bValue = true;
+        assertTrue(bValue);
+        
+        
     }
 
     /**

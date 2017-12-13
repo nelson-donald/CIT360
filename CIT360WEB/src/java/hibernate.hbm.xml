@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="atm.model.Account" table="account">
+    <id name="ID" type="java.lang.Integer">
+      <column name="ID"/>
+      <generator class="identity"/>
+    </id>
+    <property name="accountNumber" type="string">
+      <column length="45" name="accountNumber"/>
+    </property>
+    <property name="pinCode" type="string">
+      <column length="45" name="pinCode"/>
+    </property>
+    <property name="balance" type="java.lang.Integer">
+      <column name="balance"/>
+    </property>
+  </class>
+</hibernate-mapping>

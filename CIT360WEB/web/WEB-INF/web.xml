@@ -13,6 +13,22 @@
         <servlet-name>HelloWorldServlet</servlet-name>
         <servlet-class>cortana.HelloWorldServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ATMWithdrawalServlet</servlet-name>
+        <servlet-class>atmwithdrawal.ATMWithdrawalServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ATMBalanceServlet</servlet-name>
+        <servlet-class>atmbalance.ATMBalanceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ATMDepositServlet</servlet-name>
+        <servlet-class>atmdeposit.ATMDepositServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ATMLogonServlet</servlet-name>
+        <servlet-class>atmlogon.ATMLogonServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -20,6 +36,22 @@
     <servlet-mapping>
         <servlet-name>HelloWorldServlet</servlet-name>
         <url-pattern>/cortana</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ATMBalanceServlet</servlet-name>
+        <url-pattern>/atmbalance</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ATMDepositServlet</servlet-name>
+        <url-pattern>/atmdeposit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ATMLogonServlet</servlet-name>
+        <url-pattern>/atmlogon</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ATMWithdrawalServlet</servlet-name>
+        <url-pattern>/atmwithdrawal</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
